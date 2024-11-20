@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class Cat3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Mi APP",
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text("Instrumentos de Percusión"),
           backgroundColor: const Color.fromARGB(255, 155, 104, 38), // Color temático para la barra superior
@@ -23,22 +21,25 @@ class Cat3 extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurple, // Color del botón
-                      foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    ),
-                    child: Text(
-                      "Volver",
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/menu");
-                    },
+                SizedBox(height: 15),
+              // Banner principal
+              Center(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Color del botón
+                    foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                   ),
+                  child: Text(
+                    "Volver",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/menu");
+                  },
                 ),
+              ),
+              SizedBox(height: 15),
                 // Banner principal
                 Image.network(
                   "https://media.istockphoto.com/id/1400865302/es/vector/gran-conjunto-de-iconos-de-instrumentos-musicales-de-prcussion-aislados.jpg?s=612x612&w=0&k=20&c=01w7X62RcylvVbqM2e6URhK8WUoq9Vih2JfZinxsNi0=", // URL de tu imagen
@@ -66,29 +67,35 @@ class Cat3 extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://http2.mlstatic.com/D_NQ_NP_811897-MLU74317471779_012024-O.webp", // Imagen de ejemplo
-                      name: "Batería",
-                      description: "Batería acústica completa con platillos.",
-                      price: "\$1200.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://http2.mlstatic.com/D_NQ_NP_811897-MLU74317471779_012024-O.webp", // Imagen de ejemplo
+                        name: "Batería",
+                        description: "Batería acústica completa con platillos.",
+                        price: "\$1200.00",
+                      ),
                     ),
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJA8T9zvY8DfOIl7RNHTJnuygBV2mg8-JGPg&s", // Imagen de ejemplo
-                      name: "Congas",
-                      description: "Set de congas de alta calidad para percusionistas.",
-                      price: "\$450.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJA8T9zvY8DfOIl7RNHTJnuygBV2mg8-JGPg&s", // Imagen de ejemplo
+                        name: "Congas",
+                        description: "Set de congas de alta calidad para percusionistas.",
+                        price: "\$450.00",
+                      ),
                     ),
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJh6UCA2iaUD-uihcORyO5eMPqBiI9tXDckA&s", // Imagen de ejemplo
-                      name: "Timbal",
-                      description: "Timbal profesional con excelente resonancia.",
-                      price: "\$350.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJh6UCA2iaUD-uihcORyO5eMPqBiI9tXDckA&s", // Imagen de ejemplo
+                        name: "Timbal",
+                        description: "Timbal profesional con excelente resonancia.",
+                        price: "\$350.00",
+                      ),
                     ),
                   ],
                 ),
@@ -99,29 +106,35 @@ class Cat3 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   
                   children: [
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfsyd6a1nk782IThJ5CfNGIr0BdEpe4FZXpw&s", // Imagen de ejemplo
-                      name: "Caja",
-                      description: "Caja flamenca con sonido nítido y potente.",
-                      price: "\$250.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfsyd6a1nk782IThJ5CfNGIr0BdEpe4FZXpw&s", // Imagen de ejemplo
+                        name: "Caja",
+                        description: "Caja flamenca con sonido nítido y potente.",
+                        price: "\$250.00",
+                      ),
                     ),
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Trwto350NGveMc4CNoiMq3qi_b6wT2yYtA&s", // Imagen de ejemplo
-                      name: "Bongós",
-                      description: "Bongós de madera de roble para ritmo latino.",
-                      price: "\$200.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Trwto350NGveMc4CNoiMq3qi_b6wT2yYtA&s", // Imagen de ejemplo
+                        name: "Bongós",
+                        description: "Bongós de madera de roble para ritmo latino.",
+                        price: "\$200.00",
+                      ),
                     ),
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhlZXurPjL2_DQIABqhmti_23Id465ywW3w&s", // Imagen de ejemplo
-                      name: "Pandereta",
-                      description: "Pandereta con sonajeros metálicos.",
-                      price: "\$45.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhlZXurPjL2_DQIABqhmti_23Id465ywW3w&s", // Imagen de ejemplo
+                        name: "Pandereta",
+                        description: "Pandereta con sonajeros metálicos.",
+                        price: "\$45.00",
+                      ),
                     ),
                   ],
                 ),
@@ -131,29 +144,35 @@ class Cat3 extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9rtZET0ua3ZoeFP14K3M5R_7EN_O9V67s8w&s", // Imagen de ejemplo
-                      name: "Cajón Peruano",
-                      description: "Cajón de alta calidad con excelente resonancia.",
-                      price: "\$180.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9rtZET0ua3ZoeFP14K3M5R_7EN_O9V67s8w&s", // Imagen de ejemplo
+                        name: "Cajón Peruano",
+                        description: "Cajón de alta calidad con excelente resonancia.",
+                        price: "\$180.00",
+                      ),
                     ),
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://http2.mlstatic.com/D_NQ_NP_672315-CBT80554194203_112024-O.webp", // Imagen de ejemplo
-                      name: "Maracas",
-                      description: "Maracas de madera con sonajeros internos.",
-                      price: "\$25.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://http2.mlstatic.com/D_NQ_NP_672315-CBT80554194203_112024-O.webp", // Imagen de ejemplo
+                        name: "Maracas",
+                        description: "Maracas de madera con sonajeros internos.",
+                        price: "\$25.00",
+                      ),
                     ),
-                    _buildInstrumentCard(
-                      context,
-                      imageUrl:
-                          "https://http2.mlstatic.com/D_NQ_NP_678963-CBT78875340772_092024-O.webp", // Imagen de ejemplo
-                      name: "Güiro",
-                      description: "Güiro de madera con gran proyección.",
-                      price: "\$30.00",
+                    Expanded(
+                      child: _buildInstrumentCard(
+                        context,
+                        imageUrl:
+                            "https://http2.mlstatic.com/D_NQ_NP_678963-CBT78875340772_092024-O.webp", // Imagen de ejemplo
+                        name: "Güiro",
+                        description: "Güiro de madera con gran proyección.",
+                        price: "\$30.00",
+                      ),
                     ),
                   ],
                 ),
@@ -161,7 +180,7 @@ class Cat3 extends StatelessWidget {
             ),
           ),
         ),
-      ),
+      
     );
   }
 
