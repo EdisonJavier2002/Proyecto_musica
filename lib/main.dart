@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_musica/categ1.dart';
 import 'package:proyecto_musica/categ2.dart';
+import 'package:proyecto_musica/categ3.dart';
 import 'package:proyecto_musica/login.dart';
 import 'package:proyecto_musica/menu.dart'; //Material, es un template de diseño
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget{ // crear una clase con  herencia del templa
         "/menu": (context) => MenuView(),
         "/categ1": (context) => Cat1(),
         "/categ2": (context) => Cat2(),
+        "/categ3": (context) => Cat3(),
       },
     ); // llamado al template  
   }
